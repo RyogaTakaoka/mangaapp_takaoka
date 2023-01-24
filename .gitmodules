@@ -1,0 +1,3 @@
+[submodule "Fearrow_test_proto"]
+	path = Fearrow_test_proto
+	url = https://github.com/kitanoTom/Fearrow_test_proto.git

@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import { Proto } from '@/api/protocol'
 import { makeDummySearchView } from '@/mock/mock'
 
@@ -31,6 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 // 		paths: [
 // 			{ params: { title_id: '1', chapter_id: '2' } },
 // 			{ params: { title_id: '2', chapter_id: '2' } },
+// 			...
 // 		],
 // 		fallback: true,
 // 	}
