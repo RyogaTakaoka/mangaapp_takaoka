@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from 'next'
+import styles from '@/styles/Search.module.scss'
 import { Proto } from '@/api/protocol'
-import { makeDummySearchView } from '@/mock/mock'
+import { GetServerSideProps } from 'next'
+import Home from '.'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,16 +30,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 export default function SearchResult(props: { apiData: Proto.ISearchView, word:string}){
 	return (
 		<div>
+			<div className={styles.result}>
+				{'" ' + props.word + ' "の検索結果'}
+			</div>
 			{props.apiData?.titles?.map((title, index) => (
-				<div>
-					<p key={index}>{title.id}</p>
-					<p key={index}>{title.name}</p>
-					<p><img src = {title.thumbnailUrl!}/></p>
-					<p key={index}>{title.description}</p>
-					<p key={index}>{title.likeCount}</p>
+			<div className={styles.home}>
+				<div className={styles.titles}>
+					<a href={'/TitleDetail/' + title.id}>
+						<img src = {title.thumbnailUrl!}/>
+						<p className={styles.name} key={index}>{title.name}</p>
+						<p className={styles.description} key={index}>{title.description? title.description:"作品概要なし"}</p>
+						<p key={index}>{title.likeCount}</p>
+					</a>
 				</div>
+			</div>
 			))}      
 		</div>
-    
 	)
 }

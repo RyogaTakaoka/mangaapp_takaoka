@@ -1,0 +1,42 @@
+.titlename{
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 3rem;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: solid medium;
+    max-width:60%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.chapters{
+    display: flex;
+    justify-content: center;
+    max-width:50%;
+    margin: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: 5px solid gray;
+
+    img{
+        max-width: 500px;
+        width: 50%;
+        
+    }
+
+    p{
+        max-width: 500px;
+        width:50%;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 1rem;
+    }
+}
